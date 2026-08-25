@@ -1,0 +1,19 @@
+{
+  "name": "terra-commerce-dashboard",
+  "version": "1.0.0",
+  "description": "TERRA — Advanced Commerce Intelligence & Global SIM Analytics Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "dashboard",
+    "supabase",
+    "telemetry",
+    "analytics",
+    "ecommerce",
+    "travel-sim"
+  ],
+  "author": "Ali Riaz",
+  "license": "MIT"
+}

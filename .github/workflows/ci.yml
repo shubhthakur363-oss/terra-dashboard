@@ -1,0 +1,41 @@
+name: NEXUS OS — CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    name: Code Quality & Asset Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify HTML & Markup Integrity
+        run: |
+          test -f index.html || (echo "index.html missing" && exit 1)
+          test -f style.css || (echo "style.css missing" && exit 1)
+          test -f script.js || (echo "script.js missing" && exit 1)
+          test -f config.js || (echo "config.js missing" && exit 1)
+          test -f supabase_schema.sql || (echo "supabase_schema.sql missing" && exit 1)
+          echo "All core application assets validated successfully."
+
+      - name: Validate JSON Syntax
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('package.json', 'utf8')); console.log('package.json: VALID');"
+          node -e "JSON.parse(require('fs').readFileSync('vercel.json', 'utf8')); console.log('vercel.json: VALID');"
+
+      - name: Validate JavaScript Syntax
+        run: |
+          node --check script.js
+          node --check config.js
+          echo "JavaScript syntax check passed."

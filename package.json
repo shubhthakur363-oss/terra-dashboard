@@ -1,7 +1,7 @@
 {
-  "name": "terra-commerce-dashboard",
-  "version": "1.0.0",
-  "description": "TERRA — Advanced Commerce Intelligence & Global SIM Analytics Platform",
+  "name": "nexus-commerce-os",
+  "version": "2.4.0",
+  "description": "NEXUS OS — Enterprise Commerce Intelligence & Global Connectivity Telemetry",
   "main": "index.html",
   "scripts": {
     "start": "npx serve ."
@@ -11,9 +11,9 @@
     "supabase",
     "telemetry",
     "analytics",
-    "ecommerce",
-    "travel-sim"
+    "nexus-os",
+    "ecommerce"
   ],
-  "author": "Ali Riaz",
+  "author": "Shubh Thakur",
   "license": "MIT"
 }

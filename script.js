@@ -1,6 +1,6 @@
 /**
- * TERRA Commerce Intelligence & Analytics Engine
- * Connected directly to Supabase RPC Endpoints with High-Fidelity Interactive Demo Fallback
+ * NEXUS OS — Enterprise Commerce Intelligence & Analytics Engine
+ * Direct Supabase RPC Pipeline with High-Fidelity Local Telemetry Fallback
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,21 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
        ============================================================ */
     const ConfigManager = {
         init() {
-            const savedUrl = localStorage.getItem('terra_supabase_url');
+            const savedUrl = localStorage.getItem('nexus_supabase_url') || localStorage.getItem('terra_supabase_url');
             if (savedUrl && savedUrl.trim() !== '') {
                 window.CONFIG.SUPABASE.URL = savedUrl.trim();
             }
 
-            const savedKey = localStorage.getItem('terra_supabase_anon_key');
+            const savedKey = localStorage.getItem('nexus_supabase_anon_key') || localStorage.getItem('terra_supabase_anon_key');
             if (savedKey && savedKey.trim() !== '') {
                 window.CONFIG.SUPABASE.ANON_KEY = savedKey.trim();
                 window.CONFIG.USE_DEMO_MODE = false;
             } else {
-                const savedDemoMode = localStorage.getItem('terra_demo_mode');
+                const savedDemoMode = localStorage.getItem('nexus_demo_mode') || localStorage.getItem('terra_demo_mode');
                 if (savedDemoMode !== null) {
                     window.CONFIG.USE_DEMO_MODE = savedDemoMode === 'true';
                 } else {
-                    window.CONFIG.USE_DEMO_MODE = true; // Default to interactive demo for clean Vercel presentation
+                    window.CONFIG.USE_DEMO_MODE = true; // Default to interactive demo for seamless presentation
                 }
             }
         }
@@ -241,17 +241,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ============================================================
-       5. SVG CHART CANVAS RENDERER
+       5. CYBER AURORA SVG CHART CANVAS RENDERER
        ============================================================ */
     const ChartCanvas = {
         render() {
             const container = document.getElementById('sparkline-container');
             if (!container) return;
 
-            const points = [18, 25, 20, 48, 32, 88, 64, 98];
-            const width = container.clientWidth || 240;
-            const height = 80;
-            const maxY = 100;
+            const points = [22, 30, 24, 52, 40, 92, 70, 100];
+            const width = container.clientWidth || 260;
+            const height = 85;
+            const maxY = 105;
 
             const getX = (idx) => (idx / (points.length - 1)) * width;
             const getY = (val) => height - (val / maxY) * height;
@@ -270,14 +270,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const svg = `
                 <svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" style="width:100%;height:100%;overflow:visible;">
                     <defs>
-                        <linearGradient id="purpleGlow" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#818CF8" stop-opacity="0.45"/>
-                            <stop offset="100%" stop-color="#818CF8" stop-opacity="0.0"/>
+                        <linearGradient id="cyberGlow" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.45"/>
+                            <stop offset="60%" stop-color="#7928CA" stop-opacity="0.15"/>
+                            <stop offset="100%" stop-color="#07080D" stop-opacity="0.0"/>
+                        </linearGradient>
+                        <linearGradient id="strokeGradient" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stop-color="#00F2FE"/>
+                            <stop offset="100%" stop-color="#7928CA"/>
                         </linearGradient>
                     </defs>
-                    <path d="${pathD} L ${width} ${height} L 0 ${height} Z" fill="url(#purpleGlow)"/>
-                    <path d="${pathD}" fill="none" stroke="#818CF8" stroke-width="3" stroke-linecap="round"/>
-                    <circle cx="${getX(points.length - 1)}" cy="${getY(points[points.length - 1])}" r="5" fill="#818CF8" stroke="#FFFFFF" stroke-width="2.5"/>
+                    <path d="${pathD} L ${width} ${height} L 0 ${height} Z" fill="url(#cyberGlow)"/>
+                    <path d="${pathD}" fill="none" stroke="url(#strokeGradient)" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="${getX(points.length - 1)}" cy="${getY(points[points.length - 1])}" r="5.5" fill="#00F2FE" stroke="#FFFFFF" stroke-width="2.5" style="filter:drop-shadow(0 0 6px #00F2FE);"/>
                 </svg>
             `;
 
@@ -314,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const sorted = filtered.sort((a, b) => (b.orders || 0) - (a.orders || 0)).slice(0, 6);
 
             if (sorted.length === 0) {
-                container.innerHTML = `<div style="color:var(--text-dim);font-size:12px;padding:12px;">No matching destinations found</div>`;
+                container.innerHTML = `<div style="color:var(--text-dim);font-size:12px;padding:16px;text-align:center;">No matching destinations found</div>`;
                 return;
             }
 
@@ -325,14 +330,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const volumeStr = d.orders >= 1000 ? `${(d.orders / 1000).toFixed(1)}k` : `${d.orders}`;
 
                 html += `
-                    <div class="country-row" title="Click to view ${d.destination_name} breakdown">
+                    <div class="country-row" title="${d.destination_name} — ${share}% share">
                         <div class="country-info">
                             <img src="${flagSrc}" alt="${d.destination_name}" class="country-flag" onerror="this.src='https://flagcdn.com/w320/un.png'">
                             <span class="country-name">${d.destination_name}</span>
                         </div>
                         <div class="country-stats">
-                            <span class="country-pct">${share}% share</span>
-                            <span class="country-val">${volumeStr} orders</span>
+                            <span class="country-pct font-mono">${share}% share</span>
+                            <span class="country-val font-mono">${volumeStr} eSIMs</span>
                         </div>
                     </div>
                 `;
@@ -373,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const topPlan = sorted[0];
             if (topPlan && statement) {
-                statement.innerHTML = `Top volume SIM package: <strong>${topPlan.product_name}</strong> (${topPlan.orders} orders • ${UIController.formatCurrency(topPlan.revenue)})`;
+                statement.innerHTML = `Top volume package: <strong>${topPlan.product_name}</strong> (${topPlan.orders} orders • ${UIController.formatCurrency(topPlan.revenue)})`;
             }
 
             let html = '';
@@ -381,21 +386,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rank = idx + 1;
                 html += `
                     <div class="plan-card">
-                        <div style="display:flex;align-items:center;gap:12px;">
-                            <span style="font-size:11px;font-weight:900;color:var(--accent-violet);">#${rank}</span>
+                        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
                             <div>
-                                <div style="font-size:13px;font-weight:800;color:#FFF;">${p.product_name}</div>
-                                <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">${p.data_limit || 'Standard'} • ${p.validity || 'Pass'}</div>
+                                <span style="font-size:10px;font-weight:900;letter-spacing:1px;color:var(--cyan);text-transform:uppercase;">PACKAGE #${rank}</span>
+                                <div style="font-size:14px;font-weight:800;color:#FFF;margin-top:2px;">${p.product_name}</div>
+                                <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">${p.data_limit || '5G Speed'} • ${p.validity || 'Active Pass'}</div>
+                            </div>
+                            <div style="width:30px;height:30px;border-radius:8px;background:rgba(0,242,254,0.1);display:flex;align-items:center;justify-content:center;color:var(--cyan);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
                             </div>
                         </div>
-                        <div style="display:flex;justify-content:space-between;margin-top:14px;padding-top:10px;border-top:1px solid var(--border);">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:12px;border-top:1px solid var(--border);">
                             <div>
-                                <div style="font-size:10px;font-weight:800;color:var(--text-dim);">VOLUME</div>
-                                <div style="font-size:13px;font-weight:800;color:#FFF;">${p.orders || 0} SIMs</div>
+                                <div style="font-size:9px;font-weight:800;color:var(--text-dim);letter-spacing:0.8px;">DELIVERIES</div>
+                                <div class="font-mono" style="font-size:13px;font-weight:800;color:#FFF;margin-top:1px;">${p.orders || 0} eSIMs</div>
                             </div>
                             <div style="text-align:right;">
-                                <div style="font-size:10px;font-weight:800;color:var(--text-dim);">REVENUE</div>
-                                <div style="font-size:13px;font-weight:800;color:var(--accent-emerald);">${UIController.formatCurrency(p.revenue || 0)}</div>
+                                <div style="font-size:9px;font-weight:800;color:var(--text-dim);letter-spacing:0.8px;">REVENUE</div>
+                                <div class="font-mono" style="font-size:14px;font-weight:800;color:var(--emerald);margin-top:1px;">${UIController.formatCurrency(p.revenue || 0)}</div>
                             </div>
                         </div>
                     </div>
@@ -494,6 +502,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         },
 
+        getInitials(name) {
+            const parts = name.split(' ');
+            if (parts.length >= 2) return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
+            return (name.substring(0, 2) || 'EX').toUpperCase();
+        },
+
         render() {
             const tbody = document.getElementById('table-tbody');
             const infoEl = document.getElementById('pagination-info');
@@ -504,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!tbody) return;
 
             if (this.filteredEmployees.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:24px;color:var(--text-dim);">No staff performance records found matching query</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:28px;color:var(--text-dim);">No performance records matching criteria</td></tr>`;
                 if (infoEl) infoEl.textContent = 'Showing 0 records';
                 if (pageIndicator) pageIndicator.textContent = 'Page 0 of 0';
                 if (prevBtn) prevBtn.disabled = true;
@@ -516,17 +530,36 @@ document.addEventListener('DOMContentLoaded', () => {
             const endIdx = startIdx + this.pageSize;
             const pageData = this.filteredEmployees.slice(startIdx, endIdx);
 
+            const avatarGradients = [
+                'linear-gradient(135deg, #00F2FE, #4FACFE)',
+                'linear-gradient(135deg, #7928CA, #B83280)',
+                'linear-gradient(135deg, #10B981, #059669)',
+                'linear-gradient(135deg, #F59E0B, #D97706)',
+                'linear-gradient(135deg, #EC4899, #F43F5E)',
+                'linear-gradient(135deg, #38BDF8, #818CF8)'
+            ];
+
             let html = '';
             pageData.forEach((emp, idx) => {
                 const rank = startIdx + idx + 1;
+                const initials = this.getInitials(emp.name);
+                const grad = avatarGradients[(startIdx + idx) % avatarGradients.length];
+
                 html += `
                     <tr>
-                        <td style="font-weight:900;color:var(--accent-violet);">#${rank}</td>
-                        <td><strong>${emp.name}</strong></td>
-                        <td class="text-right" style="font-weight:800;color:#FFF;">${UIController.formatCurrency(emp.monthlyRevenue)}</td>
-                        <td class="text-right">${emp.monthlySales}</td>
-                        <td class="text-right" style="color:var(--accent-cyan);">${UIController.formatCurrency(emp.todayRevenue)}</td>
-                        <td class="text-right">${emp.todaySales}</td>
+                        <td>
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,0.05);border:1px solid var(--border);font-size:11px;font-weight:900;color:${rank <= 3 ? 'var(--cyan)' : 'var(--text-dim)'};" class="font-mono">#${rank}</span>
+                        </td>
+                        <td>
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:28px;height:28px;border-radius:50%;background:${grad};color:#FFF;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;">${initials}</div>
+                                <span style="font-weight:700;color:#FFF;">${emp.name}</span>
+                            </div>
+                        </td>
+                        <td class="text-right font-mono" style="font-weight:800;color:#FFF;">${UIController.formatCurrency(emp.monthlyRevenue)}</td>
+                        <td class="text-right font-mono">${emp.monthlySales}</td>
+                        <td class="text-right font-mono" style="color:var(--cyan);font-weight:700;">${UIController.formatCurrency(emp.todayRevenue)}</td>
+                        <td class="text-right font-mono">${emp.todaySales}</td>
                     </tr>
                 `;
             });
@@ -534,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tbody.innerHTML = html;
 
             const totalPages = Math.ceil(this.filteredEmployees.length / this.pageSize) || 1;
-            if (infoEl) infoEl.textContent = `Showing ${startIdx + 1}–${Math.min(endIdx, this.filteredEmployees.length)} of ${this.filteredEmployees.length} staff members`;
+            if (infoEl) infoEl.textContent = `Displaying ${startIdx + 1}–${Math.min(endIdx, this.filteredEmployees.length)} of ${this.filteredEmployees.length} account leads`;
             if (pageIndicator) pageIndicator.textContent = `Page ${this.currentPage} of ${totalPages}`;
             if (prevBtn) prevBtn.disabled = this.currentPage <= 1;
             if (nextBtn) nextBtn.disabled = this.currentPage >= totalPages;
@@ -562,10 +595,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('btn-export-main')?.addEventListener('click', () => this.exportCSV());
 
-            // Card filters
+            // Card click toast filters
             document.querySelectorAll('.grad-card').forEach(card => {
                 card.addEventListener('click', () => {
-                    this.showToast(`Selected view: ${card.querySelector('.grad-card-name').textContent}`);
+                    const cardName = card.querySelector('.grad-card-name')?.textContent || 'Metric';
+                    this.showToast(`Active telemetry focus: ${cardName}`);
                 });
             });
         },
@@ -577,12 +611,12 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (hour < 17) greeting = 'Good Afternoon';
 
             const greetingEl = document.getElementById('dynamic-greeting');
-            if (greetingEl) greetingEl.textContent = `${greeting}, Ali`;
+            if (greetingEl) greetingEl.textContent = `${greeting}, Shubh`;
 
             const subEl = document.getElementById('header-date-sub');
             if (subEl) {
                 const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
-                subEl.textContent = `Commerce Intelligence Telemetry • ${new Date().toLocaleDateString('en-US', options)}`;
+                subEl.textContent = `NEXUS Commerce Intelligence Telemetry • ${new Date().toLocaleDateString('en-US', options)}`;
             }
         },
 
@@ -610,7 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tab.addEventListener('click', () => {
                     tabs.forEach(t => t.classList.remove('active'));
                     tab.classList.add('active');
-                    this.showToast(`Filtered statistics for timeframe: ${tab.textContent}`);
+                    this.showToast(`Telemetry timeframe updated: ${tab.textContent}`);
                 });
             });
         },
@@ -650,10 +684,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 DestinationController.updateData(destData);
                 PlanController.updateData(planData);
 
-                this.showToast("Telemetry synchronized successfully.");
+                this.showToast("Telemetry synced successfully.");
             } catch (err) {
                 console.error("Dashboard sync error:", err);
-                this.showToast("Telemetry update completed.", false);
+                this.showToast("Telemetry updated.", false);
             } finally {
                 if (refreshBtn) refreshBtn.querySelector('svg')?.classList.remove('spinning');
             }
@@ -711,13 +745,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('btn-settings-mode-live')?.addEventListener('click', () => {
                 window.CONFIG.USE_DEMO_MODE = false;
-                localStorage.setItem('terra_demo_mode', 'false');
+                localStorage.setItem('nexus_demo_mode', 'false');
                 this.updateSettingsModeButtons();
             });
 
             document.getElementById('btn-settings-mode-demo')?.addEventListener('click', () => {
                 window.CONFIG.USE_DEMO_MODE = true;
-                localStorage.setItem('terra_demo_mode', 'true');
+                localStorage.setItem('nexus_demo_mode', 'true');
                 this.updateSettingsModeButtons();
             });
 
@@ -725,7 +759,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const url = document.getElementById('settings-url-input').value;
                 const key = document.getElementById('settings-key-input').value;
                 const statusEl = document.getElementById('settings-conn-status');
-                if (statusEl) statusEl.textContent = '● Testing connection...';
+                if (statusEl) statusEl.textContent = '● Pinging RPC...';
 
                 const res = await API.testConnection(url, key);
                 if (statusEl) {
@@ -740,11 +774,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (url) {
                     window.CONFIG.SUPABASE.URL = url;
-                    localStorage.setItem('terra_supabase_url', url);
+                    localStorage.setItem('nexus_supabase_url', url);
                 }
                 if (key) {
                     window.CONFIG.SUPABASE.ANON_KEY = key;
-                    localStorage.setItem('terra_supabase_anon_key', key);
+                    localStorage.setItem('nexus_supabase_anon_key', key);
                 }
 
                 toggleModal(false);
@@ -753,7 +787,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('btn-error-demo-mode')?.addEventListener('click', () => {
                 window.CONFIG.USE_DEMO_MODE = true;
-                localStorage.setItem('terra_demo_mode', 'true');
+                localStorage.setItem('nexus_demo_mode', 'true');
                 this.hideApiError();
                 this.refreshData(true);
             });
@@ -788,7 +822,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         exportCSV() {
             const emps = TableController.filteredEmployees;
-            let csv = 'Rank,Staff Name,Monthly Revenue (INR),Monthly Sales,Today Revenue (INR),Today Sales\n';
+            let csv = 'Rank,Account Lead,MTD Revenue (INR),MTD Orders,Today Revenue (INR),Today Orders\n';
             emps.forEach((e, idx) => {
                 csv += `${idx + 1},"${e.name}",${e.monthlyRevenue},${e.monthlySales},${e.todayRevenue},${e.todaySales}\n`;
             });
@@ -797,10 +831,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.setAttribute('href', url);
-            a.setAttribute('download', `TERRA_Staff_Sales_Audit_${this.asOfDate}.csv`);
+            a.setAttribute('download', `NEXUS_Sales_Telemetry_${this.asOfDate}.csv`);
             a.click();
 
-            this.showToast("Exported Employee Audit Log CSV.");
+            this.showToast("Exported Sales Telemetry CSV.");
         },
 
         showToast(msg) {

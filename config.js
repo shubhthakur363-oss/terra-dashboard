@@ -1,16 +1,16 @@
 /**
- * TERRA — Commerce Intelligence & Analytics Platform
- * Master Configuration & Telemetry Settings
+ * NEXUS OS — Enterprise Commerce Intelligence & Global Analytics Platform
+ * Master Telemetry & Supabase Cloud Integration Config
  */
 
 window.CONFIG = {
-    APP_NAME: "TERRA Commerce Intelligence",
-    APP_CODE: "SI / 01",
+    APP_NAME: "NEXUS Commerce OS",
+    APP_CODE: "NX / 01",
     CURRENCY: "₹",
     DEFAULT_AS_OF_DATE: "2026-05-20",
     DEFAULT_THEME: "dark",
     
-    // Supabase Live Connection Credentials (Configurable via UI Settings Modal or here)
+    // Supabase Live Connection Credentials
     SUPABASE: {
         URL: "https://qjnqbkcvfowgylhnnrja.supabase.co",
         ANON_KEY: ""
@@ -85,12 +85,12 @@ window.CONFIG = {
             { destination_name: "Japan", flag_path: "https://flagcdn.com/w320/jp.png", orders: 45, revenue: 36687.00, revenue_share: 7.7, order_share: 7.5 }
         ],
         product_sales: [
-            { product_name: "Thailand Unlimited 5G SIM", data_limit: "50 GB / 30 Days", validity: "30 Days", orders: 110, revenue: 88000.00, aov: 800.00, revenue_share: 18.6 },
-            { product_name: "UK 10GB Data Pass", data_limit: "10 GB / 15 Days", validity: "15 Days", orders: 82, revenue: 73800.00, aov: 900.00, revenue_share: 15.6 },
-            { product_name: "USA 20GB High-Speed", data_limit: "20 GB / 30 Days", validity: "30 Days", orders: 70, revenue: 63000.00, aov: 900.00, revenue_share: 13.3 },
-            { product_name: "Europe Regional Unlimited", data_limit: "Unlimited / 14 Days", validity: "14 Days", orders: 65, revenue: 58500.00, aov: 900.00, revenue_share: 12.3 },
-            { product_name: "Dubai 5GB QuickSIM", data_limit: "5 GB / 7 Days", validity: "7 Days", orders: 55, revenue: 44000.00, aov: 800.00, revenue_share: 9.3 },
-            { product_name: "Japan 10GB 5G eSIM", data_limit: "10 GB / 15 Days", validity: "15 Days", orders: 40, revenue: 36000.00, aov: 900.00, revenue_share: 7.6 }
+            { product_name: "Thailand Unlimited 5G eSIM", data_limit: "50 GB High-Speed", validity: "30 Days Active", orders: 110, revenue: 88000.00, aov: 800.00, revenue_share: 18.6 },
+            { product_name: "UK 10GB Data Pass", data_limit: "10 GB Ultra 5G", validity: "15 Days Active", orders: 82, revenue: 73800.00, aov: 900.00, revenue_share: 15.6 },
+            { product_name: "USA 20GB High-Speed", data_limit: "20 GB High-Speed", validity: "30 Days Active", orders: 70, revenue: 63000.00, aov: 900.00, revenue_share: 13.3 },
+            { product_name: "Europe Regional 33-Zone", data_limit: "Unlimited Roaming", validity: "14 Days Active", orders: 65, revenue: 58500.00, aov: 900.00, revenue_share: 12.3 },
+            { product_name: "Dubai 5GB QuickPass", data_limit: "5 GB 5G Ready", validity: "7 Days Active", orders: 55, revenue: 44000.00, aov: 800.00, revenue_share: 9.3 },
+            { product_name: "Japan 10GB Premium eSIM", data_limit: "10 GB NTT 5G", validity: "15 Days Active", orders: 40, revenue: 36000.00, aov: 900.00, revenue_share: 7.6 }
         ]
     }
 };

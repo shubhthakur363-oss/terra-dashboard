@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TERRA — Advanced Commerce Intelligence & Global SIM Analytics Platform">
-    <title>TERRA — Commerce Intelligence & Global Analytics</title>
+    <meta name="description" content="NEXUS OS — Enterprise Commerce Intelligence & Global Connectivity Telemetry">
+    <title>NEXUS OS — Enterprise Commerce Intelligence</title>
     
-    <!-- Modern Typography: Plus Jakarta Sans & Inter -->
+    <!-- Modern Typography: Outfit, Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <!-- Background Ambient Glow Orbs -->
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
+    <div class="ambient-glow orb-3"></div>
 
     <!-- App Wrapper -->
     <div class="app-layout">
@@ -25,62 +30,66 @@
         <aside class="sidebar" id="app-sidebar">
             <div class="brand-logo">
                 <div class="logo-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                        <line x1="12" y1="22" x2="12" y2="15.5" />
+                        <polyline points="22 8.5 12 15.5 2 8.5" />
+                        <polyline points="2 15.5 12 8.5 22 15.5" />
+                    </svg>
                 </div>
-                <span class="brand-name">TERRA</span>
+                <div class="brand-text-wrap">
+                    <span class="brand-name">NEXUS<span class="brand-accent">OS</span></span>
+                    <span class="brand-badge">v2.4 PRO</span>
+                </div>
                 <button class="sidebar-close-btn" id="btn-close-mobile-sidebar" aria-label="Close Navigation">✕</button>
             </div>
 
             <nav class="sidebar-nav">
-                <!-- Active Nav Group -->
-                <div class="nav-group">
+                <!-- Navigation Group -->
+                <div class="nav-section">
+                    <span class="section-title">Telemetry & Ops</span>
                     <a href="#dashboard" class="nav-item active">
-                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
-                        <span>Dashboard</span>
-                        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/></svg>
+                        <span>Command Center</span>
+                        <span class="nav-live-dot"></span>
                     </a>
                     <a href="#analytics" class="nav-item">
-                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        <span>Analytics</span>
-                    </a>
-                </div>
-
-                <!-- Main Menu Group -->
-                <div class="nav-section">
-                    <span class="section-title">Main Menu</span>
-                    <a href="#insights" class="nav-item">
-                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        <span>Insights</span>
-                        <span class="badge-count badge-red">10</span>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                        <span>Revenue Velocity</span>
                     </a>
                     <a href="#destinations" class="nav-item">
-                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-                        <span>Destinations</span>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <span>Global Hubs</span>
+                        <span class="badge-count badge-cyan">LIVE</span>
                     </a>
                     <a href="#plans" class="nav-item">
-                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                        <span>SIM Packages</span>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8"/><line x1="10" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="14" y2="8"/></svg>
+                        <span>eSIM Packages</span>
                     </a>
                     <a href="#data" class="nav-item">
-                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        <span>Staff Audit</span>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>Staff Audit Log</span>
                     </a>
                 </div>
 
                 <!-- System Group -->
                 <div class="nav-section">
-                    <span class="section-title">System</span>
+                    <span class="section-title">Integration</span>
                     <button id="btn-open-settings-side" class="nav-item nav-btn-link">
-                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                        <span>API Settings</span>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <span>Supabase RPC API</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                     </button>
                 </div>
             </nav>
 
             <div class="sidebar-footer">
-                <div class="status-indicator-pill" id="sidebar-status-pill">
-                    <span class="status-dot"></span>
-                    <span id="live-status-text">● DEMO MODE</span>
+                <div class="network-status-box">
+                    <div class="status-indicator-pill" id="sidebar-status-pill">
+                        <span class="status-dot"></span>
+                        <span id="live-status-text">● DEMO MODE</span>
+                    </div>
+                    <span class="status-sub">RPC v1 • 24ms latency</span>
                 </div>
             </div>
         </aside>
@@ -88,34 +97,40 @@
         <!-- MAIN CONTAINER CONTENT -->
         <main class="main-content">
 
-            <!-- TOP SEARCH & USER BAR -->
+            <!-- TOP SEARCH & TELEMETRY BAR -->
             <header class="main-header">
                 <div class="header-left">
                     <button class="mobile-toggle-btn" id="btn-open-mobile-sidebar" aria-label="Toggle Menu">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                     </button>
                     <div>
-                        <h1 class="header-title" id="dynamic-greeting">Dashboard</h1>
-                        <p class="header-sub" id="header-date-sub">Commerce Intelligence Telemetry</p>
+                        <div class="greeting-row">
+                            <h1 class="header-title" id="dynamic-greeting">Executive Overview</h1>
+                            <span class="live-pill"><span class="pulse-ring"></span>LIVE TELEMETRY</span>
+                        </div>
+                        <p class="header-sub" id="header-date-sub">Commerce Intelligence Telemetry • Real-time Stream</p>
                     </div>
                 </div>
 
                 <div class="header-right">
                     <div class="search-bar">
                         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                        <input type="text" id="global-search-input" placeholder="Search staff, SIMs, countries..." class="search-input">
+                        <input type="text" id="global-search-input" placeholder="Search staff, eSIMs, destinations..." class="search-input">
+                        <kbd class="search-kbd">⌘K</kbd>
                     </div>
 
-                    <div class="header-notifications" id="btn-notifications">
+                    <div class="header-notifications" id="btn-notifications" title="System alerts">
                         <svg class="notif-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                         <span class="notif-badge">3</span>
                     </div>
 
-                    <div class="user-profile" id="btn-open-settings">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Ali Riaz" class="user-avatar">
+                    <div class="user-profile" id="btn-open-settings" title="Open API settings">
+                        <div class="avatar-ring">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Executive" class="user-avatar">
+                        </div>
                         <div class="user-info">
-                            <span class="user-name">Ali Riaz</span>
-                            <span class="user-role">Manager</span>
+                            <span class="user-name">Shubh Thakur</span>
+                            <span class="user-role">Operations Director</span>
                         </div>
                         <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </div>
@@ -124,159 +139,188 @@
 
             <!-- Error Notice Card (Dismissible) -->
             <div id="api-error-card" class="error-banner hidden">
-                <div class="banner-icon">⚠️</div>
+                <div class="banner-icon">⚡</div>
                 <div class="banner-info">
-                    <span class="banner-title" id="api-error-title">Supabase Live Sync Alert</span>
-                    <span class="banner-text" id="api-error-message">Running on local interactive demo engine.</span>
+                    <span class="banner-title" id="api-error-title">Supabase RPC Stream Notice</span>
+                    <span class="banner-text" id="api-error-message">Operating on high-fidelity interactive local engine.</span>
                 </div>
                 <div class="banner-actions">
-                    <button id="btn-error-retry" class="btn btn-sm btn-primary">Retry API</button>
-                    <button id="btn-error-demo-mode" class="btn btn-sm btn-secondary">Interactive Demo Mode</button>
+                    <button id="btn-error-retry" class="btn btn-sm btn-primary">Reconnect RPC</button>
+                    <button id="btn-error-demo-mode" class="btn btn-sm btn-secondary">Interactive Mode</button>
                 </div>
             </div>
 
-            <!-- SECTION 1: VISITORS SOURCE BANNER & 4 GRADIENT CARDS -->
-            <section class="section-panel banner-panel">
+            <!-- SECTION 1: HERO METRIC PANEL & 4 GLOW METRIC CARDS -->
+            <section class="section-panel banner-panel" id="dashboard">
                 <div class="panel-left">
                     <div class="panel-header-row">
-                        <h2 class="panel-heading">Visitors Source</h2>
+                        <span class="chip-badge">GROSS TELEMETRY</span>
                         <div class="dropdown-pill" id="date-pill-container">
-                            <span id="as-of-date-text">This Week</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <span id="as-of-date-text">Current Period</span>
                             <input type="date" id="as-of-date-picker" value="2026-05-20" class="date-picker-hidden">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </div>
                     </div>
 
                     <div class="total-metric">
-                        <div class="hero-stat-num" id="hero-mtd-revenue">₹4,72,087.00</div>
-                        <div class="hero-stat-lbl">Total Platform Revenue &amp; Visitor Volume</div>
+                        <div class="hero-stat-lbl">Aggregate Volume &amp; Processed Revenue</div>
+                        <div class="hero-stat-num font-mono" id="hero-mtd-revenue">₹4,72,087.00</div>
+                        <div class="hero-delta-pill positive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                            <span>+38.4% vs last period</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="panel-right gradient-cards-grid">
-                    <!-- Card 1: MTD SIM REVENUE (Instagram Style) -->
-                    <div class="grad-card card-instagram" data-card-filter="mtd-rev">
+                    <!-- Card 1: MTD eSIM REVENUE -->
+                    <div class="grad-card card-aurora" data-card-filter="mtd-rev">
+                        <div class="grad-card-glow"></div>
                         <div class="grad-card-header">
-                            <span class="platform-icon">💎</span>
-                            <span class="badge-pct" id="hero-trend-pct">+25.0% vs MTD</span>
+                            <div class="metric-icon-wrap icon-cyan">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <span class="badge-pct pct-green" id="hero-trend-pct">+25.0% MTD</span>
                         </div>
-                        <div class="grad-card-name">MTD SIM Revenue</div>
-                        <div class="grad-card-val" id="card-mtd-rev-val">₹4,72,087.00</div>
+                        <div class="grad-card-name">MTD Gross Revenue</div>
+                        <div class="grad-card-val font-mono" id="card-mtd-rev-val">₹4,72,087.00</div>
+                        <div class="grad-card-footer">Target fulfillment: <strong>92.4%</strong></div>
                     </div>
 
-                    <!-- Card 2: TODAY REVENUE (Facebook Style) -->
-                    <div class="grad-card card-facebook" data-card-filter="today-rev">
+                    <!-- Card 2: TODAY REVENUE -->
+                    <div class="grad-card card-hyper" data-card-filter="today-rev">
+                        <div class="grad-card-glow"></div>
                         <div class="grad-card-header">
-                            <span class="platform-icon">⚡</span>
-                            <span class="badge-pct" id="today-rev-pct">+45.0% vs yesterday</span>
+                            <div class="metric-icon-wrap icon-violet">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
+                            <span class="badge-pct pct-violet" id="today-rev-pct">+45.0% velocity</span>
                         </div>
-                        <div class="grad-card-name">Today Revenue</div>
-                        <div class="grad-card-val" id="card-today-rev-val">₹29,006.40</div>
+                        <div class="grad-card-name">Today Volume</div>
+                        <div class="grad-card-val font-mono" id="card-today-rev-val">₹29,006.40</div>
+                        <div class="grad-card-footer">Daily run rate: <strong>Active</strong></div>
                     </div>
 
-                    <!-- Card 3: MTD ORDERS (Website Style) -->
-                    <div class="grad-card card-website" data-card-filter="mtd-orders">
+                    <!-- Card 3: MTD ORDERS -->
+                    <div class="grad-card card-emerald" data-card-filter="mtd-orders">
+                        <div class="grad-card-glow"></div>
                         <div class="grad-card-header">
-                            <span class="platform-icon">📦</span>
-                            <span class="badge-pct" id="card-mtd-orders-badge">594 Orders</span>
+                            <div class="metric-icon-wrap icon-emerald">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            </div>
+                            <span class="badge-pct pct-cyan" id="card-mtd-orders-badge">594 eSIMs</span>
                         </div>
-                        <div class="grad-card-name">MTD SIM Orders</div>
-                        <div class="grad-card-val" id="card-mtd-orders-val">594</div>
+                        <div class="grad-card-name">MTD Delivered Orders</div>
+                        <div class="grad-card-val font-mono" id="card-mtd-orders-val">594</div>
+                        <div class="grad-card-footer">Avg. dispatch: <strong>Instant</strong></div>
                     </div>
 
-                    <!-- Card 4: TODAY ORDERS (TikTok Style) -->
-                    <div class="grad-card card-tiktok" data-card-filter="today-orders">
+                    <!-- Card 4: TODAY ORDERS -->
+                    <div class="grad-card card-amber" data-card-filter="today-orders">
+                        <div class="grad-card-glow"></div>
                         <div class="grad-card-header">
-                            <span class="platform-icon">📈</span>
-                            <span class="badge-pct" id="today-sales-pct">+36.0% order speed</span>
+                            <div class="metric-icon-wrap icon-amber">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            </div>
+                            <span class="badge-pct pct-amber" id="today-sales-pct">+36.0% throughput</span>
                         </div>
-                        <div class="grad-card-name">Today SIM Orders</div>
-                        <div class="grad-card-val" id="card-today-orders-val">34</div>
+                        <div class="grad-card-name">Today Processed Orders</div>
+                        <div class="grad-card-val font-mono" id="card-today-orders-val">34</div>
+                        <div class="grad-card-footer">Fulfillment score: <strong>100%</strong></div>
                     </div>
                 </div>
             </section>
 
-            <!-- SECTION 2: STATISTICS PANEL (REVENUE SPLINE, PURCHASES BARS, GENDER DONUT) -->
+            <!-- SECTION 2: ADVANCED ANALYTICS SECTION (VELOCITY SPLINE, PURCHASES BARS, DEMOGRAPHICS) -->
             <section class="section-panel stats-panel" id="analytics">
                 <div class="panel-header-row">
-                    <h2 class="panel-heading">Statistics</h2>
-                    <div class="time-filter-tabs">
-                        <button class="filter-tab" data-timeframe="today">Today</button>
-                        <button class="filter-tab active" data-timeframe="week">Week</button>
-                        <button class="filter-tab" data-timeframe="month">Month</button>
-                        <button class="filter-tab" data-timeframe="year">Year</button>
+                    <div>
+                        <h2 class="panel-heading">Performance Velocity &amp; Distribution</h2>
+                        <p class="panel-subtext">Multi-dimensional transactional throughput across timeframes</p>
                     </div>
-                    <a href="#data" class="link-more">View Data Audit →</a>
+                    <div class="time-filter-tabs">
+                        <button class="filter-tab" data-timeframe="today">24h</button>
+                        <button class="filter-tab active" data-timeframe="week">7 Days</button>
+                        <button class="filter-tab" data-timeframe="month">30 Days</button>
+                        <button class="filter-tab" data-timeframe="year">YTD</button>
+                    </div>
                 </div>
 
                 <div class="stats-grid-3col">
-                    <!-- Spline 1: Revenue Spline Card -->
+                    <!-- Chart 1: Revenue Velocity Sparkline Card -->
                     <div class="stat-card stat-spline-card">
-                        <div class="stat-card-title">Revenue Velocity</div>
-                        <div class="stat-card-growth positive">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 4 4 20 20 20"/></svg>
-                            <span id="rev-growth-val">+36.20%</span>
+                        <div class="stat-card-head">
+                            <div>
+                                <div class="stat-card-title">Throughput Surge</div>
+                                <div class="stat-card-sub">Real-time RPC stream velocity</div>
+                            </div>
+                            <div class="stat-card-growth positive">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 4 4 20 20 20"/></svg>
+                                <span id="rev-growth-val">+36.20%</span>
+                            </div>
                         </div>
-                        <div class="stat-card-big" id="stat-rev-pct">36.20%</div>
-                        <div class="stat-card-sub">Share of Monthly Target</div>
+                        <div class="stat-card-big font-mono" id="stat-rev-pct">36.20%</div>
                         <div class="sparkline-box" id="sparkline-container"></div>
                     </div>
 
-                    <!-- Bar Chart 2: Purchases Bar Chart Card -->
+                    <!-- Chart 2: Purchases Trend Bar Chart Card -->
                     <div class="stat-card stat-bars-card">
-                        <div class="stat-card-title">Purchases Trend</div>
-                        <div class="stat-card-growth positive">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 4 4 20 20 20"/></svg>
-                            <span>+15.00%</span>
+                        <div class="stat-card-head">
+                            <div>
+                                <div class="stat-card-title">Weekly Order Volume</div>
+                                <div class="stat-card-sub">Daily transactional intensity</div>
+                            </div>
+                            <div class="stat-card-big font-mono" id="stat-purchases-amount">₹29,006.40</div>
                         </div>
-                        <div class="stat-card-big" id="stat-purchases-amount">₹29,006.40</div>
-                        <div class="stat-card-sub">Total Amount Processed</div>
                         
                         <!-- Vertical Bar Chart -->
                         <div class="vertical-bars-container" id="weekly-bars-container">
-                            <div class="vbar-item" data-day="Sunday" data-val="40"><span class="vbar-top">40</span><div class="vbar-fill" style="height: 44%;"></div><span class="vbar-lbl">S</span></div>
-                            <div class="vbar-item" data-day="Monday" data-val="65"><span class="vbar-top">65</span><div class="vbar-fill" style="height: 72%;"></div><span class="vbar-lbl">M</span></div>
-                            <div class="vbar-item" data-day="Tuesday" data-val="50"><span class="vbar-top">50</span><div class="vbar-fill" style="height: 55%;"></div><span class="vbar-lbl">T</span></div>
-                            <div class="vbar-item" data-day="Wednesday" data-val="90"><span class="vbar-top">90</span><div class="vbar-fill" style="height: 100%;"></div><span class="vbar-lbl">W</span></div>
-                            <div class="vbar-item" data-day="Thursday" data-val="70"><span class="vbar-top">70</span><div class="vbar-fill" style="height: 77%;"></div><span class="vbar-lbl">Th</span></div>
-                            <div class="vbar-item" data-day="Friday" data-val="85"><span class="vbar-top">85</span><div class="vbar-fill" style="height: 94%;"></div><span class="vbar-lbl">F</span></div>
-                            <div class="vbar-item" data-day="Saturday" data-val="10"><span class="vbar-top">10</span><div class="vbar-fill" style="height: 12%;"></div><span class="vbar-lbl">S</span></div>
+                            <div class="vbar-item" data-day="Sunday" data-val="40"><span class="vbar-top">40</span><div class="vbar-fill" style="height: 44%;"></div><span class="vbar-lbl">SUN</span></div>
+                            <div class="vbar-item" data-day="Monday" data-val="65"><span class="vbar-top">65</span><div class="vbar-fill" style="height: 72%;"></div><span class="vbar-lbl">MON</span></div>
+                            <div class="vbar-item" data-day="Tuesday" data-val="50"><span class="vbar-top">50</span><div class="vbar-fill" style="height: 55%;"></div><span class="vbar-lbl">TUE</span></div>
+                            <div class="vbar-item" data-day="Wednesday" data-val="90"><span class="vbar-top">90</span><div class="vbar-fill" style="height: 100%;"></div><span class="vbar-lbl">WED</span></div>
+                            <div class="vbar-item" data-day="Thursday" data-val="70"><span class="vbar-top">70</span><div class="vbar-fill" style="height: 77%;"></div><span class="vbar-lbl">THU</span></div>
+                            <div class="vbar-item" data-day="Friday" data-val="85"><span class="vbar-top">85</span><div class="vbar-fill" style="height: 94%;"></div><span class="vbar-lbl">FRI</span></div>
+                            <div class="vbar-item" data-day="Saturday" data-val="10"><span class="vbar-top">10</span><div class="vbar-fill" style="height: 12%;"></div><span class="vbar-lbl">SAT</span></div>
                         </div>
                     </div>
 
-                    <!-- Donut Chart 3: Gender / Demographics Donut Card -->
+                    <!-- Chart 3: Demographics Donut Card -->
                     <div class="stat-card stat-donut-card">
-                        <div class="stat-card-title">Demographics & Share</div>
+                        <div class="stat-card-head">
+                            <div class="stat-card-title">User Demographics</div>
+                            <div class="stat-card-sub">Audience segmentation</div>
+                        </div>
                         <div class="donut-chart-box">
                             <svg class="donut-svg" viewBox="0 0 36 36">
-                                <path class="donut-ring" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#25273C" stroke-width="3.8" fill="none"/>
-                                <path class="donut-segment segment-male" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#6366F1" stroke-width="3.8" stroke-dasharray="63, 100" fill="none"/>
-                                <path class="donut-segment segment-female" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#06B6D4" stroke-width="3.8" stroke-dasharray="25, 100" stroke-dashoffset="-63" fill="none"/>
-                                <path class="donut-segment segment-other" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#3B82F6" stroke-width="3.8" stroke-dasharray="12, 100" stroke-dashoffset="-88" fill="none"/>
+                                <path class="donut-ring" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="rgba(255,255,255,0.06)" stroke-width="3.6" fill="none"/>
+                                <path class="donut-segment segment-male" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#00F2FE" stroke-width="3.6" stroke-dasharray="63, 100" fill="none"/>
+                                <path class="donut-segment segment-female" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#7928CA" stroke-width="3.6" stroke-dasharray="25, 100" stroke-dashoffset="-63" fill="none"/>
+                                <path class="donut-segment segment-other" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#10B981" stroke-width="3.6" stroke-dasharray="12, 100" stroke-dashoffset="-88" fill="none"/>
                             </svg>
                             <div class="donut-center-label">
-                                <span class="donut-center-num">63%</span>
-                                <span class="donut-center-sub">Male Lead</span>
+                                <span class="donut-center-num font-mono">63%</span>
+                                <span class="donut-center-sub">Dominant</span>
                             </div>
                         </div>
                         <div class="donut-legend">
-                            <div class="legend-item"><span class="dot dot-violet"></span><span>Male 63%</span></div>
-                            <div class="legend-item"><span class="dot dot-cyan"></span><span>Female 25%</span></div>
-                            <div class="legend-item"><span class="dot dot-blue"></span><span>Other 12%</span></div>
+                            <div class="legend-item"><span class="dot dot-cyan"></span><span>Corporate (63%)</span></div>
+                            <div class="legend-item"><span class="dot dot-violet"></span><span>Travel (25%)</span></div>
+                            <div class="legend-item"><span class="dot dot-emerald"></span><span>Other (12%)</span></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SECTION 3: COUNTRY & WORLD MAP PANEL -->
+            <!-- SECTION 3: COUNTRY & RADAR WORLD MAP PANEL -->
             <section class="section-panel country-panel" id="destinations">
                 <div class="panel-header-row">
                     <div>
-                        <h2 class="panel-heading">Country Demand Intelligence</h2>
-                        <p class="panel-subtext">Realtime SIM order distribution across global travel hubs</p>
+                        <h2 class="panel-heading">Global Destination Demand</h2>
+                        <p class="panel-subtext">Real-time edge connectivity across major travel corridors</p>
                     </div>
                     <div class="panel-header-actions">
-                        <input type="text" id="country-search-input" placeholder="Search destination..." class="table-search-input" style="width: 180px;">
+                        <input type="text" id="country-search-input" placeholder="Search destination..." class="table-search-input" style="width: 200px;">
                     </div>
                 </div>
 
@@ -284,72 +328,80 @@
                     <!-- Left: Ranked Country List -->
                     <div class="country-list" id="destination-ranking-container"></div>
 
-                    <!-- Right: Vector World Map Display Box -->
+                    <!-- Right: Cyber Grid Vector World Map Display -->
                     <div class="world-map-box">
+                        <div class="map-grid-overlay"></div>
                         <svg viewBox="0 0 1000 500" class="world-svg">
-                            <!-- World Map SVG Continents -->
-                            <path d="M150,150 L200,140 L280,180 L250,250 L180,220 Z" fill="#2E304B" stroke="#6366F1" stroke-width="1.5"/> <!-- North America -->
-                            <path d="M280,270 L340,290 L320,380 L260,350 Z" fill="#2E304B" stroke="#3B82F6" stroke-width="1.5"/> <!-- South America -->
-                            <path d="M480,120 L580,110 L600,180 L490,190 Z" fill="#4F46E5" stroke="#818CF8" stroke-width="2"/> <!-- Europe -->
-                            <path d="M470,210 L580,210 L560,340 L480,310 Z" fill="#2E304B" stroke="#06B6D4" stroke-width="1.5"/> <!-- Africa -->
-                            <path d="M620,130 L850,110 L880,260 L650,250 Z" fill="#4F46E5" stroke="#10B981" stroke-width="2"/> <!-- Asia -->
-                            <path d="M780,320 L880,320 L870,400 L790,390 Z" fill="#2E304B" stroke="#EC4899" stroke-width="1.5"/> <!-- Australia -->
+                            <!-- Continents -->
+                            <path d="M150,150 L200,140 L280,180 L250,250 L180,220 Z" fill="rgba(0, 242, 254, 0.08)" stroke="rgba(0, 242, 254, 0.4)" stroke-width="1.2"/>
+                            <path d="M280,270 L340,290 L320,380 L260,350 Z" fill="rgba(121, 40, 202, 0.08)" stroke="rgba(121, 40, 202, 0.4)" stroke-width="1.2"/>
+                            <path d="M480,120 L580,110 L600,180 L490,190 Z" fill="rgba(0, 242, 254, 0.15)" stroke="#00F2FE" stroke-width="1.8"/>
+                            <path d="M470,210 L580,210 L560,340 L480,310 Z" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
+                            <path d="M620,130 L850,110 L880,260 L650,250 Z" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="1.8"/>
+                            <path d="M780,320 L880,320 L870,400 L790,390 Z" fill="rgba(245, 158, 11, 0.08)" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.2"/>
 
-                            <!-- Live Hotspot Glow Pulse Points -->
+                            <!-- Connecting Flight / Roaming Arcs -->
+                            <path d="M 220 180 Q 360 80 510 150" fill="none" stroke="rgba(0, 242, 254, 0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <path d="M 510 150 Q 620 110 730 210" fill="none" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+                            <!-- Pulsing Hotspots -->
                             <g class="map-pulse-group" transform="translate(730, 210)">
-                                <circle r="12" fill="rgba(16, 185, 129, 0.3)" class="map-ping-ring"/>
+                                <circle r="14" fill="rgba(16, 185, 129, 0.2)" class="map-ping-ring"/>
                                 <circle r="5" fill="#10B981"/>
                             </g>
                             <g class="map-pulse-group" transform="translate(510, 150)">
-                                <circle r="12" fill="rgba(99, 102, 241, 0.3)" class="map-ping-ring"/>
-                                <circle r="5" fill="#6366F1"/>
+                                <circle r="14" fill="rgba(0, 242, 254, 0.2)" class="map-ping-ring"/>
+                                <circle r="5" fill="#00F2FE"/>
                             </g>
                             <g class="map-pulse-group" transform="translate(220, 180)">
-                                <circle r="12" fill="rgba(59, 130, 246, 0.3)" class="map-ping-ring"/>
-                                <circle r="5" fill="#3B82F6"/>
+                                <circle r="14" fill="rgba(121, 40, 202, 0.2)" class="map-ping-ring"/>
+                                <circle r="5" fill="#7928CA"/>
                             </g>
                             <g class="map-pulse-group" transform="translate(560, 220)">
-                                <circle r="12" fill="rgba(245, 158, 11, 0.3)" class="map-ping-ring"/>
+                                <circle r="14" fill="rgba(245, 158, 11, 0.2)" class="map-ping-ring"/>
                                 <circle r="5" fill="#F59E0B"/>
                             </g>
                         </svg>
                         <div class="map-overlay-badge">
                             <span class="pulse-dot"></span>
-                            <span>Global Active SIM Destinations</span>
+                            <span>Global Active Edge Telemetry Active</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SECTION 4: SIM PACKAGES & EMPLOYEE AUDIT TABLE PANEL -->
+            <!-- SECTION 4: TOP DATA PACKAGES -->
             <section class="section-panel table-panel" id="plans">
                 <div class="panel-header-row">
-                    <h2 class="panel-heading">Top SIM Packages</h2>
+                    <div>
+                        <h2 class="panel-heading">Top Performing Packages</h2>
+                        <p class="panel-subtext" id="plan-insight-text">Top volume eSIM package: Thailand Unlimited 5G</p>
+                    </div>
                     <div class="header-controls">
-                        <span class="plan-insight-text" id="plan-insight-text">Top package: Thailand Unlimited 5G</span>
+                        <span class="chip-badge">CATALOG PRO</span>
                     </div>
                 </div>
 
                 <div class="plans-grid" id="plans-container"></div>
-                <div class="pagination-bar" style="margin-top: 14px;">
-                    <span id="plan-page-indicator-text" class="pagination-info">Showing top SIM packages</span>
-                </div>
             </section>
 
-            <!-- SECTION 5: EMPLOYEE AUDIT TABLE -->
+            <!-- SECTION 5: AUDIT LOG LEADERBOARD -->
             <section class="section-panel table-panel" id="data">
                 <div class="panel-header-row">
                     <div>
-                        <h2 class="panel-heading">Employee Sales Audit Log</h2>
-                        <p class="panel-subtext">Detailed monthly &amp; daily performance leaderboard</p>
+                        <h2 class="panel-heading">Team Performance Audit Log</h2>
+                        <p class="panel-subtext">Real-time conversion &amp; billing telemetry by account executive</p>
                     </div>
                     <div class="header-controls">
-                        <input type="text" id="table-search-input" placeholder="Filter staff name..." class="table-search-input">
+                        <input type="text" id="table-search-input" placeholder="Search staff name..." class="table-search-input">
                         <button id="btn-refresh" class="btn btn-sm btn-secondary" title="Sync Telemetry">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-                            Refresh
+                            Sync Telemetry
                         </button>
-                        <button id="btn-export-main" class="btn btn-sm btn-primary">Export CSV</button>
+                        <button id="btn-export-main" class="btn btn-sm btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Export CSV
+                        </button>
                     </div>
                 </div>
 
@@ -357,12 +409,12 @@
                     <table class="data-table" id="main-data-table">
                         <thead>
                             <tr>
-                                <th data-sort="rank" class="sortable">Rank</th>
-                                <th data-sort="name" class="sortable">Staff Name <span class="sort-indicator"></span></th>
-                                <th data-sort="monthlyRevenue" class="sortable text-right active-sort">Monthly Revenue <span class="sort-indicator">↓</span></th>
-                                <th data-sort="monthlySales" class="sortable text-right">Monthly Sales <span class="sort-indicator"></span></th>
+                                <th data-sort="rank" class="sortable" style="width: 80px;">Rank</th>
+                                <th data-sort="name" class="sortable">Account Lead <span class="sort-indicator"></span></th>
+                                <th data-sort="monthlyRevenue" class="sortable text-right active-sort">MTD Revenue <span class="sort-indicator">↓</span></th>
+                                <th data-sort="monthlySales" class="sortable text-right">MTD Orders <span class="sort-indicator"></span></th>
                                 <th data-sort="todayRevenue" class="sortable text-right">Today Revenue <span class="sort-indicator"></span></th>
-                                <th data-sort="todaySales" class="sortable text-right">Today Sales <span class="sort-indicator"></span></th>
+                                <th data-sort="todaySales" class="sortable text-right">Today Orders <span class="sort-indicator"></span></th>
                             </tr>
                         </thead>
                         <tbody id="table-tbody"></tbody>
@@ -386,34 +438,40 @@
     <div id="settings-modal" class="modal-overlay hidden">
         <div class="modal-dialog">
             <div class="modal-head">
-                <h3>Supabase API &amp; Telemetry Settings</h3>
+                <div class="modal-title-wrap">
+                    <div class="modal-icon-badge">⚡</div>
+                    <div>
+                        <h3>Supabase RPC Telemetry Engine</h3>
+                        <p class="modal-sub">Configure live cloud database or local sandbox</p>
+                    </div>
+                </div>
                 <button id="btn-close-settings" class="btn-close">✕</button>
             </div>
             <div class="modal-body">
                 <div class="field-group">
-                    <label class="field-label">DATA SOURCE ENGINE</label>
+                    <label class="field-label">ACTIVE DATA PIPELINE</label>
                     <div class="tab-group" style="width: 100%;">
-                        <button class="tab-btn active" id="btn-settings-mode-demo" style="flex:1;">DEMO MODE</button>
+                        <button class="tab-btn active" id="btn-settings-mode-demo" style="flex:1;">DEMO SANDBOX</button>
                         <button class="tab-btn" id="btn-settings-mode-live" style="flex:1;">LIVE SUPABASE</button>
                     </div>
                 </div>
 
                 <div class="field-group">
-                    <label for="settings-url-input" class="field-label">SUPABASE PROJECT URL</label>
-                    <input type="text" id="settings-url-input" class="field-input" placeholder="https://your-project.supabase.co">
+                    <label for="settings-url-input" class="field-label">SUPABASE HOST URL</label>
+                    <input type="text" id="settings-url-input" class="field-input" placeholder="https://xxxx.supabase.co">
                 </div>
 
                 <div class="field-group">
-                    <label for="settings-key-input" class="field-label">SUPABASE ANON / PUBLISHABLE KEY</label>
-                    <input type="password" id="settings-key-input" class="field-input" placeholder="Paste public anon key...">
+                    <label for="settings-key-input" class="field-label">ANON / PUBLIC API KEY</label>
+                    <input type="password" id="settings-key-input" class="field-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
                 </div>
 
                 <div class="status-bar">
-                    <button id="btn-test-connection" class="btn btn-sm btn-secondary">Test Connection</button>
-                    <span id="settings-conn-status" class="conn-text">● Ready to test</span>
+                    <button id="btn-test-connection" class="btn btn-sm btn-secondary">Ping RPC</button>
+                    <span id="settings-conn-status" class="conn-text">● Ready to verify</span>
                 </div>
 
-                <button id="btn-save-settings" class="btn btn-primary btn-full">Save Configuration</button>
+                <button id="btn-save-settings" class="btn btn-primary btn-full">Apply &amp; Stream Data</button>
             </div>
         </div>
     </div>
